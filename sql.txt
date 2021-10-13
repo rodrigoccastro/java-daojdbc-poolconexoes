@@ -1,0 +1,34 @@
+﻿CREATE PROCEDURE sp_listpessoas AS 
+BEGIN 
+Select * from pessoas;
+END;
+
+CREATE PROCEDURE sp_getpessoa 
+@cpf varchar(11)
+AS 
+BEGIN 
+Select * from pessoas where cpf=@cpf
+END;
+
+CREATE PROCEDURE sp_insertpessoas 
+@cpf varchar(11), @nome varchar(100)
+AS 
+BEGIN 
+insert into pessoas (cpf, nome) values (@cpf,@nome)
+END;
+
+CREATE PROCEDURE sp_updatepessoas 
+@cpf varchar(11), @nome varchar(100)
+AS 
+BEGIN 
+update pessoas set nome=@nome where cpf=@cpf
+END;
+
+
+CREATE PROCEDURE sp_deletepessoas 
+@cpf varchar(11)
+AS 
+BEGIN 
+delete from pessoas where cpf=@cpf
+END;
+
