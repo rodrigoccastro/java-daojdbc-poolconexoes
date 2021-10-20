@@ -16,7 +16,7 @@ public class GestorConexoes {
 		stConnectionUrl = connectionUrl; 
 		Class.forName(stDriver);
 		Connection con = DriverManager.getConnection(stConnectionUrl);
-    	listConexoes = new ArrayList<Connection>();
+    		listConexoes = new ArrayList<Connection>();
 		listConexoes.add(con);
     }
 
@@ -36,9 +36,9 @@ public class GestorConexoes {
         while (!listConexoes.isEmpty()) {
         	listConexoes.remove(0).close();
         }
-		stDriver = null; 
-		stConnectionUrl = null; 
-		listConexoes = null;
+	stDriver = null; 
+	stConnectionUrl = null; 
+	listConexoes = null;
     }
 
 }
