@@ -20,7 +20,7 @@ public abstract class GenericDAO {
 		Connection conn = GestorConexoes.getConexao();
 		PreparedStatement pstm = conn.prepareStatement(sql);
 		pstm = addArgs(pstm, sql, args);
-        toReturn = pstm.executeUpdate();
+        	toReturn = pstm.executeUpdate();
 		pstm.close();
 		GestorConexoes.devolveConexao(conn);
 		return toReturn;
@@ -87,8 +87,7 @@ public abstract class GenericDAO {
 
 	protected ArrayList<Object> makeObjList(ResultSet rs) throws Exception {
 		ArrayList<Object> registros = new ArrayList<Object>();
-		while (rs.next())
-        {
+		while (rs.next()) {
 			registros.add(makeObj(rs));
 		}
 		return registros;
