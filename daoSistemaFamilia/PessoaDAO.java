@@ -15,7 +15,7 @@ public class PessoaDAO extends GenericDAO {
 	} 
 	
 	public ArrayList<Object> executeSpGetListAll() throws Exception  {
-    	return executeQueryStoredProcedure("{CALL sp_listpessoas}", null);
+    		return executeQueryStoredProcedure("{CALL sp_listpessoas}", null);
 	}
 
 	public Pessoa getSpPessoa(String cpf) throws Exception  {
@@ -26,8 +26,8 @@ public class PessoaDAO extends GenericDAO {
 		if (resp != null) {
 			p = (Pessoa) resp;
 		}
-    	return p;
-    }
+    		return p;
+    	}
 	
 	public int executeSpInsertPessoa(Pessoa p) throws Exception  {
 		ArrayList<Object> argsx = new ArrayList<Object>();
@@ -51,8 +51,8 @@ public class PessoaDAO extends GenericDAO {
 
 	/*
 	public ArrayList<Object> getListAll() throws Exception  {
-    	return executeQuery("SELECT * FROM pessoas", null);
-    }
+	    	return executeQuery("SELECT * FROM pessoas", null);
+    	}
 
 	public Pessoa getQueryPessoa(String cpf) throws Exception  {
 		Pessoa p = null;
@@ -62,28 +62,28 @@ public class PessoaDAO extends GenericDAO {
 		if (resp != null) {
 			p = (Pessoa) resp.get(0);
 		}
-    	return p;
-    }
+    		return p;
+    	}
 	
 	public int insertPessoa(Pessoa p) throws Exception  {
 		ArrayList<Object> args = new ArrayList<Object>();
 		args.add(p.getCpf());
 		args.add(p.getNome());
 		return executeUpdate("insert into pessoas (cpf, nome) values (?,?)", args);
-    }
+    	}
 	
 	public int updatePessoa(Pessoa p) throws Exception  {
 		ArrayList<Object> args = new ArrayList<Object>();
 		args.add(p.getNome());
 		args.add(p.getCpf());
 		return executeUpdate("update pessoas set nome=? where cpf=?", args);
-    }
+    	}
 	
 	public int deletePessoa(String cpf) throws Exception  {
 		ArrayList<Object> args = new ArrayList<Object>();
 		args.add(cpf);
 		return executeUpdate("delete from pessoas where cpf=?", args);
-    }
+    	}
 	*/
 	
 }
